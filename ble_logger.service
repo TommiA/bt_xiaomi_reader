@@ -1,0 +1,17 @@
+[Unit]
+Description=BLE Scanner for Influx
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/tai/ble_scanner.py
+Restart=always
+RestartSec=5
+User=tai
+StandardOutput=journal
+StandardError=journal
+TimeoutStopSec=10
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
+
