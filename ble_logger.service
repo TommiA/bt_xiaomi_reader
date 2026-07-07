@@ -3,10 +3,10 @@ Description=BLE Scanner for Influx
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/tai/ble_scanner.py
+ExecStart=/usr/bin/python3 /home/<user>/ble_scanner.py
 Restart=always
 RestartSec=5
-User=tai
+User=<user>
 StandardOutput=journal
 StandardError=journal
 TimeoutStopSec=10

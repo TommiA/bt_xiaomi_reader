@@ -29,7 +29,7 @@ def test_load_mac_list_exception():
             result = ble_scanner.load_mac_list("dummy")
 
     assert result == set()
-
+    
 def test_log_to_influx_writes_point(monkeypatch):
     fake_write = MagicMock()
 
@@ -52,6 +52,7 @@ def test_log_to_influx_writes_point(monkeypatch):
 class FakeDevice:
 
     address = "AA:BB:CC:DD:EE:FF"
+
 
 class FakeAdvertisement:
 
@@ -176,3 +177,4 @@ async def test_scan_loop(monkeypatch):
         await ble_scanner.scan_loop()
 
     scanner.start.assert_called_once()
+    
